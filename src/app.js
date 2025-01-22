@@ -1,17 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const {sequelize} = require('./model')
+const { sequelize } = require('./model');
 
 const app = express();
 
 app.use(bodyParser.json());
-app.set('sequelize', sequelize)
-app.set('models', sequelize.models)
+app.set('sequelize', sequelize);
+app.set('models', sequelize.models);
 
-const adminRoutes = require( './routes/admin');
-const contractRoutes = require( './routes/contract');
-const jobRoutes = require( './routes/job');
-const profileRoutes = require( './routes/profile');
+const adminRoutes = require('./routes/admin');
+const contractRoutes = require('./routes/contract');
+const jobRoutes = require('./routes/job');
+const profileRoutes = require('./routes/profile');
 
 app.use('/admin', adminRoutes);
 app.use('/contracts', contractRoutes);
@@ -19,7 +19,7 @@ app.use('/balances', profileRoutes);
 app.use('/jobs', jobRoutes);
 
 // /**
-//  * @returns Get all unpaid jobs for a user (**_either_** a client or contractor), 
+//  * @returns Get all unpaid jobs for a user (**_either_** a client or contractor),
 //  * for **_active contracts only_**. (in_progress)
 //  */
 // app.get('/jobs/unpaid', getProfile, async (req, res) => {
@@ -43,8 +43,8 @@ app.use('/jobs', jobRoutes);
 // })
 
 // /**
-//  * @returns *_POST_** `/jobs/:job_id/pay` - Pay for a job, 
-//  * a client can only pay if his balance >= the amount to pay. 
+//  * @returns *_POST_** `/jobs/:job_id/pay` - Pay for a job,
+//  * a client can only pay if his balance >= the amount to pay.
 //  * The amount should be moved from the client's balance to the contractor balance.
 //  */
 // app.post('/jobs/:job_id/pay', getProfile, async (req, res) => {
@@ -93,7 +93,7 @@ app.use('/jobs', jobRoutes);
 // })
 
 // /**
-//  * @returns Deposits money into the the balance of a client, a client 
+//  * @returns Deposits money into the the balance of a client, a client
 //  * can't deposit more than 25% his total of jobs to pay. (at the deposit moment)
 //  */
 // app.post('/balances/deposit/:userId', getProfile, async (req, res) => {
@@ -170,7 +170,7 @@ app.use('/jobs', jobRoutes);
 // })
 
 // /**
-//  * @returns the clients the paid the most for jobs in the query time period. 
+//  * @returns the clients the paid the most for jobs in the query time period.
 //  * Limit query parameter should be applied, default limit is 2.
 //  *
 //  *[
@@ -229,6 +229,5 @@ app.use('/jobs', jobRoutes);
 //     }).sort((a, b) => b.paid - a.paid).slice(0, limit || 2)
 //     res.json(bestClients)
 // })
-
 
 module.exports = app;

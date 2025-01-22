@@ -1,10 +1,9 @@
-
 const adminOnly = async (req, res, next) => {
-    const id = req.get('profile_id')
+  const id = req.get('profile_id');
 
-    if(id !== 'admin') return res.status(401).end()
+  if (id !== 'admin') return res.status(401).end();
 
-    next()
-}
+  next();
+};
 
-module.exports = {adminOnly}
+module.exports = { adminOnly };

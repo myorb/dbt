@@ -6,18 +6,18 @@ const getContractById = async (req, res) => {
     if (contract) {
       res.status(200).json({
         success: true,
-        data: contract
+        data: contract,
       });
     } else {
       res.status(404).json({
         success: false,
-        message: 'contract not found'
+        message: 'contract not found',
       });
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      error
+      error,
     });
   }
 };
@@ -28,18 +28,18 @@ const getAllContracts = async (req, res) => {
     if (contracts) {
       res.status(200).json({
         success: true,
-        data: contracts
+        data: contracts,
       });
     } else {
       res.status(404).json({
         success: false,
-        message: 'contract not found'
+        message: 'contract not found',
       });
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      error
+      error,
     });
   }
 };

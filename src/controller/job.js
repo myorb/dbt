@@ -6,18 +6,18 @@ const getAllUnpaidJobs = async (req, res) => {
     if (jobs) {
       res.status(200).json({
         success: true,
-        data: jobs
+        data: jobs,
       });
     } else {
       res.status(404).json({
         success: false,
-        message: 'no upaid job found'
+        message: 'no upaid job found',
       });
     }
   } catch (error) {
     res.status(500).json({
       success: false,
-      error
+      error,
     });
   }
 };
@@ -34,7 +34,7 @@ const payJob = async (req, res) => {
     res.status(500).json({
       status: false,
       message: 'Error occurred while paying for a job',
-      error
+      error,
     });
   }
 };

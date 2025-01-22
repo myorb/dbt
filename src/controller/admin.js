@@ -10,11 +10,11 @@ const getBestProfession = async (req, res) => {
       res.status(400).json(bestProfessions);
     }
   } catch (error) {
-    res
-      .status(500).json({
-        success: false,
-        message: 'Error occurred while finding best profession', error
-      });
+    res.status(500).json({
+      success: false,
+      message: 'Error occurred while finding best profession',
+      error,
+    });
   }
 };
 
@@ -28,15 +28,15 @@ const getBestClients = async (req, res) => {
       res.status(400).json(bestClients);
     }
   } catch (error) {
-    res
-      .status(500).json({
-        success: false,
-        message: 'Error occurred while finding best Client', error
-      });
+    res.status(500).json({
+      success: false,
+      message: 'Error occurred while finding best Client',
+      error,
+    });
   }
 };
 
 module.exports = {
   getBestProfession,
-  getBestClients
+  getBestClients,
 };

@@ -11,7 +11,7 @@ const { getBestProfession, getBestClients } = require('../controller/admin');
 router.get('/best-profession', adminOnly, getBestProfession);
 
 /**
- * @returns the clients the paid the most for jobs in the query time period. 
+ * @returns the clients the paid the most for jobs in the query time period.
  * Limit query parameter should be applied, default limit is 2.
  *
  *[
@@ -32,6 +32,6 @@ router.get('/best-profession', adminOnly, getBestProfession);
  *    }
  *]
  */
-router.get("/best-clients", adminOnly, getBestClients);
+router.get('/best-clients', adminOnly, getBestClients);
 
 module.exports = router;
