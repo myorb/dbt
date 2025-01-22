@@ -28,7 +28,6 @@ const payJob = async (req) => {
   const { sequelize } = require('../model');
   const { Contract, Job, Profile } = req.app.get('models');
   const { id, balance } = req.profile;
-  // console.log("id, balance, type", id, balance, type )
   const { job_id } = req.params;
   const job = await Job.findOne({
     where: {
