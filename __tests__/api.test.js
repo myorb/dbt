@@ -56,7 +56,7 @@ describe('Jobs Endpoints', () => {
     const res = await request(app)
       .post('/balances/deposit/1')
       .set('profile_id', 1)
-      .send({ amount: 1150 });
+      .send({ amount: 999999 });
     expect(res.statusCode).toEqual(400);
     expect(res.body.message).toBe(
       'Cannot deposit more than 25% your total of jobs to pay'
